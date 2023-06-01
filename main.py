@@ -31,7 +31,7 @@ def find_letters(wordlist:list):
                 print("Така буква э в цьому слові:", temp)
                 if temp == secretword:
                     return True
-            print("Наступна спроба:", temp)
+            # print("Наступна спроба:", temp)
         return True
 
 if find_letters(worlds):
