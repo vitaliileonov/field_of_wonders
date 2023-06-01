@@ -23,7 +23,7 @@ def find_letters(wordlist:list):
     print('Вгадайте слово з ', num, 'спроб:', temp)
     for _ in range(num):
         letter = input("Введіть букву або все слово:")
-        if letter == secretword:
+        if letter != secretword:
             if letter in secretword:
                 templist.append(letter)
                 pattern = r"[^" + "".join(templist) + "]"
@@ -31,8 +31,10 @@ def find_letters(wordlist:list):
                 print("Така буква э в цьому слові:", temp)
                 if temp == secretword:
                     return True
-            print("Такої літери немає:")
-        return True
+            else:
+                print("Такої літери немає:")
+        else:
+            return True
 
 if find_letters(worlds):
     print('Вітаю, ви вгадали слово!')
