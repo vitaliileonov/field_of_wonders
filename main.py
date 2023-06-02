@@ -21,7 +21,8 @@ def find_letters(wordlist:list):
             print("Помилка: Введіть ціле число!")
 
     print('Вгадайте слово з ', num, 'спроб:', temp)
-    for _ in range(num):
+
+    while num != 0:
         letter = input("Введіть букву або все слово:")
         if letter != secretword:
             if letter in secretword:
@@ -32,7 +33,11 @@ def find_letters(wordlist:list):
                 if temp == secretword:
                     return True
             else:
-                print("Такої літери немає:")
+                num -= 1
+                if len(letter) == len(secretword):
+                    print("Слово не вгадано, залишилось спроб:", num)
+                else:
+                    print("Такої літери немає, залишилось спроб:", num)
         else:
             return True
 
